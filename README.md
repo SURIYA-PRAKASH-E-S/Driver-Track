@@ -2,10 +2,11 @@
 
 A production-grade real-time geolocation tracking platform built for logistics applications. This system provides live driver tracking with role-based access control and location sharing capabilities - all running on Firebase free tier with no backend servers required.
 
-**Author:** E S  
-**GitHub:** [https://github.com/SURIYA-PRAKASH-E-S](https://github.com/SURIYA-PRAKASH-E-S)  
 
-*Made with ❤️ by E S*
+## 🚀 Demo
+
+**Live Demo** [Driver-track](https://liveshare-c4b10.web.app/)  
+
 
 ## 🚀 Features
 
@@ -72,7 +73,7 @@ locationAPI.trackSpecificDriver(driverUid, callback)
 ## 📁 Project Structure
 
 ```
-GeolocationAPI/
+Driver-track
 ├── README.md                    # This documentation file
 ├── firebase.json               # Firebase configuration
 ├── database.rules.json         # Firebase security rules
@@ -387,18 +388,8 @@ firebase deploy
 
 MIT License - feel free to use for commercial logistics applications.
 
-## 🆘 Support
-
-For issues and questions:
-1. Check this README for common solutions  
-2. Review Firebase documentation
-3. Test with Firebase emulator first
-4. Verify security rules deployment
-
 ---
 
-**Built with ❤️ by E S for the logistics industry**
-
-**Connect with the author:**  
-- **GitHub:** [https://github.com/SURIYA-PRAKASH-E-S](https://github.com/SURIYA-PRAKASH-E-S)  
-- **Name:** E S
+**Built with ❤️ by E S for the logistics** 
+[GitHub](https://github.com/SURIYA-PRAKASH-E-S)
+ 
