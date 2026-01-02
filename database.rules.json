@@ -1,0 +1,40 @@
+{
+  "rules": {
+    "drivers": {
+      ".read": "auth !== null",
+      ".write": "auth !== null && root.child('admins').child(auth.uid).exists()",
+      "$driverId": {
+        ".read": "auth !== null && (auth.uid === $driverId || root.child('admins').child(auth.uid).exists() || (data.child('sharedWith').child(auth.uid).exists() && data.child('online').val() === true))",
+        ".write": "auth !== null && auth.uid === $driverId",
+        ".validate": "newData.hasChildren(['lat', 'lng', 'online', 'updatedAt'])",
+        "lat": {
+          ".validate": "newData.isNumber() && newData.val() >= -90 && newData.val() <= 90"
+        },
+        "lng": {
+          ".validate": "newData.isNumber() && newData.val() >= -180 && newData.val() <= 180"
+        },
+        "online": {
+          ".validate": "newData.isBoolean()"
+        },
+        "updatedAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "sharedWith": {
+          "$customerUid": {
+            ".validate": "newData.isBoolean() && newData.val() === true"
+          }
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    },
+    "admins": {
+      "$adminUid": {
+        ".read": "auth !== null && auth.uid === $adminUid",
+        ".write": "auth !== null && auth.uid === $adminUid",
+        ".validate": "newData.isBoolean() && newData.val() === true"
+      }
+    }
+  }
+}
